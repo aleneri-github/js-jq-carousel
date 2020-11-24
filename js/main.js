@@ -12,9 +12,6 @@ console.log(next);
 $(prev).click(
   function() {
     prevImage();
-
-
-
   }
 );
 
@@ -33,21 +30,9 @@ $(document).keydown(
     } else if (event.which == 39) {
       nextImage();
     }
-
   }
 );
-
-
-
-
-
-
-
-
-
 });
-
-
 
 
 // NOTE: FUNZIONI------------------------------------
@@ -56,7 +41,6 @@ $(document).keydown(
 function prevImage() {
 
   var imgActive = $('.images img.active');
-
   imgActive.removeClass('active');
 
   if (imgActive.hasClass('first')) {
@@ -66,7 +50,6 @@ function prevImage() {
   }
 
   var circleActive = $('.nav i.active');
-
   circleActive.removeClass('active');
 
   if (circleActive.hasClass('first')) {
@@ -78,8 +61,8 @@ function prevImage() {
 
 
 function nextImage() {
-  var imgActive = $('.images img.active');
 
+  var imgActive = $('.images img.active');
   imgActive.removeClass('active');
 
   if (imgActive.hasClass('last')) {
@@ -89,7 +72,6 @@ function nextImage() {
   }
 
   var circleActive = $('.nav i.active');
-
   circleActive.removeClass('active');
 
   if (circleActive.hasClass('last')) {
