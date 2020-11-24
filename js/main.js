@@ -22,10 +22,27 @@ $(prev).click(
 $(next).click(
   function() {
     nextImage();
+  }
+);
 
+
+$(document).keydown(
+  function () {
+    if (event.which == 37) {
+      prevImage();
+    } else if (event.which == 39) {
+      nextImage();
+    }
 
   }
 );
+
+
+
+
+
+
+
 
 
 });
