@@ -11,6 +11,8 @@ console.log(next);
 
 $(prev).click(
   function() {
+    prevImage();
+
 
 
   }
@@ -19,6 +21,7 @@ $(prev).click(
 
 $(next).click(
   function() {
+    nextImage();
 
 
   }
@@ -36,15 +39,37 @@ $(next).click(
 function prevImage() {
 
   var imgActive = $('.images img.active');
-  console.log(imgActive);
+
+  imgActive.removeClass('active');
+
+  if (imgActive.hasClass('first')) {
+    $('.images img.last').addClass('active');
+  } else {
+    imgActive.prev().addClass('active');
+  }
+
   var circleActive = $('.nav i.active');
-  console.log(circleActive);
+
+  // imgActive.removeClass('active');
+  // imgActive.prev().addClass('active');
 
 }
 
 
 function nextImage() {
   var imgActive = $('.images img.active');
+
+  imgActive.removeClass('active');
+
+  if (imgActive.hasClass('last')) {
+    $('.images img.first').addClass('active');
+  } else {
+    imgActive.next().addClass('active');
+  }
+
   var circleActive = $('.nav i.active');
+
+  imgActive.removeClass('active');
+  imgActive.next().addClass('active');
 
 }
