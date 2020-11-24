@@ -50,9 +50,13 @@ function prevImage() {
 
   var circleActive = $('.nav i.active');
 
-  // imgActive.removeClass('active');
-  // imgActive.prev().addClass('active');
+  circleActive.removeClass('active');
 
+  if (circleActive.hasClass('first')) {
+    $('.nav i.last').addClass('active');
+  } else {
+    circleActive.prev().addClass('active');
+  }
 }
 
 
@@ -69,7 +73,11 @@ function nextImage() {
 
   var circleActive = $('.nav i.active');
 
-  imgActive.removeClass('active');
-  imgActive.next().addClass('active');
+  circleActive.removeClass('active');
 
+  if (circleActive.hasClass('last')) {
+    $('.nav i.first').addClass('active');
+  } else {
+    circleActive.next().addClass('active');
+  }
 }
